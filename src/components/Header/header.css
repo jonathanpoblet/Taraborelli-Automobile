@@ -1,0 +1,10 @@
+header {
+    padding: 12px 0px;
+    background-color: #000000;
+}
+
+header img {
+    width: 240px;
+    padding-left: 50px;
+    cursor: pointer;
+}
