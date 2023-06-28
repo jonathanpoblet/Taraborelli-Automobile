@@ -1,4 +1,6 @@
-import React from 'react';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { FaDollarSign, FaHourglassHalf, FaCar, FaBuilding } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
@@ -6,6 +8,10 @@ import Swal from 'sweetalert2';
 import './main.css';
 
 export default function Main() {
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   const enviarForm = async () => {
 
@@ -77,7 +83,7 @@ export default function Main() {
         <article className="main-info-banda" id="line-match-header"></article>
 
         <article className="main-info-article">
-          <p data-aos="fade-down" data-aos-duration="1400" id="info-text1">Taraborelli es una compañía con más de 35 años de experiencia en la comercialización de vehículos y servicios. Brindamos cobertura de venta en diferentes canales: Convencional, Planes de Ahorro y Venta Corporativa. Nuestra trayectoria revela más de 60.000 vehículos entregados y un equipo de trabajo que supera los 400 colaboradores, especialmente capacitados para ofrecer el mejor servicio al cliente.</p>
+          <p data-aos="fade-down" data-aos-duration="1400" id="info-text1"><b>Taraborelli</b> es una compañía con más de 35 años de experiencia en la comercialización de vehículos y servicios. Brindamos cobertura de venta en diferentes canales: Convencional, Planes de Ahorro y Venta Corporativa. Nuestra trayectoria revela más de 60.000 vehículos entregados y un equipo de trabajo que supera los 400 colaboradores, especialmente capacitados para ofrecer el <b>mejor servicio al cliente.</b></p>
           <p data-aos="fade-down" data-aos-duration="1400" id="info-text2">Contamos con un complejo de concesionarias diseñadas para lograr la mejor experiencia de compra. 6 sucursales de ventas, más de 8.000 metros cuadrados de talleres integrales para brindarle el mejor servicio postventa y tres Centros de Entrega de 0km propios.</p>
 
           <h2 id="title-info" data-aos="fade-down" data-aos-duration="1400">ELEGÍ TARABORELLI</h2>

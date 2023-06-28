@@ -104,6 +104,7 @@
 
 .main-section-2-article-form-button {
     width: 70%;
+    height: 40px;
     border-radius: 5px;
     border: none;
     padding: 10px 10px;
@@ -328,6 +329,7 @@
         box-shadow: 0 0 10px 7px rgba(20, 20, 20, 0.3);
         font-weight: bold;
         font-size: 14px;
+        height: 30px;
     }
 }
 
