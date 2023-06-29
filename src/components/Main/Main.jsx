@@ -41,8 +41,30 @@ export default function Main() {
     if(modelo) form = {...form, modelo}
     if(sucursal) form = {...form, sucursal}
 
+    form = {...form,token: 'gqptewbrqfgmxsgh'}
+
     console.log(form)
-    Swal.fire({title: 'Enviando Formulario', confirmButtonText: 'OK',confirmButtonColor: '#111', customClass: { popup: 'custom-background', title: 'custom-title' }})
+
+    const response = await fetch('http://localhost:8080/send-email', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      // mode: "cors", //
+      redirect: "follow",
+      body: JSON.stringify(form),
+    });
+
+    if(response.status == 200) {
+      Swal.fire({title: 'Enviando Formulario', confirmButtonText: 'OK',confirmButtonColor: '#111', customClass: { popup: 'custom-background', title: 'custom-title' }})
+      
+      setTimeout(() => {
+        location.reload()
+      }, 1500);
+    } else {
+      Swal.fire({title: 'Error al enviar formulario', confirmButtonText: 'OK',confirmButtonColor: '#111', customClass: { popup: 'custom-background', title: 'custom-title' }})
+    }
   }
 
   return (
