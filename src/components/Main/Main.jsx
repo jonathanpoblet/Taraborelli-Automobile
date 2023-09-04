@@ -24,14 +24,6 @@ export default function Main() {
 
   const enviarForm = async () => {
 
-    let form = {
-        nombre: "",
-        email: "",
-        tel: "",
-        modelo: "",
-        sucursal: "",
-    };
-
     const nombre = document.getElementById('nombre').value;
     const email = document.getElementById('email').value;
     const tel = document.getElementById('tel').value;
@@ -44,22 +36,15 @@ export default function Main() {
     if(!modelo) return Swal.fire({title: 'Ingresa el modelo que buscas', confirmButtonText: 'OK',confirmButtonColor: '#111', customClass: { popup: 'custom-background', title: 'custom-title' }})
     if(!sucursal) return Swal.fire({title: 'Ingresa una sucursal de interes', confirmButtonText: 'OK',confirmButtonColor: '#111', customClass: { popup: 'custom-background', title: 'custom-title' }})
 
-    if(nombre) form = {...form, nombre}
-    if(email) form = {...form, email}
-    if(tel) form = {...form, tel}
-    if(modelo) form = {...form, modelo}
-    if(sucursal) form = {...form, sucursal}
-
-    form = {...form,token: 'gqptewbrqfgmxsgh'}
+    const form = {nombre,email,tel,modelo,sucursal}
 
     console.log(form)
 
-    const response = await fetch('http://backend.taraborelli.com:8080/send-email', {
+    const response = await fetch('http://localhost:80/send-email', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      mode: "no-cors",
       redirect: "follow",
       body: JSON.stringify(form),
     });
