@@ -4,7 +4,7 @@ import './nav.css';
 export function Nav() {
   return (
     <nav id="nav">
-        <a id="title-nav" href="./index.html">PROMOCIONES EXCLUSIVAS TARABORELLI</a>
+        <p id="title-nav" href="./index.html">TARABORELLI AUTOMOBILE</p>
     </nav>
   )
 }

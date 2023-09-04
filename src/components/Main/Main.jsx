@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { FaDollarSign, FaHourglassHalf, FaCar, FaBuilding } from 'react-icons/fa';
+import { FaDollarSign, FaHourglassHalf, FaCar, FaBuilding, FaArrowCircleRight } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 
@@ -12,6 +12,15 @@ export default function Main() {
   useEffect(() => {
     AOS.init();
   }, []);
+
+  const handleScrollToForm = (modelo) => {
+    const formElement = document.getElementById('form');
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('modelo').value = modelo
+    }
+  };
+
 
   const enviarForm = async () => {
 
@@ -45,16 +54,17 @@ export default function Main() {
 
     console.log(form)
 
-    const response = await fetch('http://localhost:8080/send-email', {
+    const response = await fetch('http://backend.taraborelli.com:8080/send-email', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
       },
-      // mode: "cors", //
+      mode: "no-cors",
       redirect: "follow",
       body: JSON.stringify(form),
     });
+
+    console.log(response)
 
     if(response.status == 200) {
       Swal.fire({title: 'Enviando Formulario', confirmButtonText: 'OK',confirmButtonColor: '#111', customClass: { popup: 'custom-background', title: 'custom-title' }})
@@ -105,7 +115,7 @@ export default function Main() {
         <article className="main-info-banda" id="line-match-header"></article>
 
         <article className="main-info-article">
-          <p data-aos="fade-down" data-aos-duration="1400" id="info-text1"><b>Taraborelli</b> es una compañía con más de 35 años de experiencia en la comercialización de vehículos y servicios. Brindamos cobertura de venta en diferentes canales: Convencional, Planes de Ahorro y Venta Corporativa. Nuestra trayectoria revela más de 60.000 vehículos entregados y un equipo de trabajo que supera los 400 colaboradores, especialmente capacitados para ofrecer el <b>mejor servicio al cliente.</b></p>
+          <p data-aos="fade-down" data-aos-duration="1400" id="info-text1"><b style={{color: '#E40428'}}>Taraborelli</b> es una compañía con más de 35 años de experiencia en la comercialización de vehículos y servicios. Brindamos cobertura de venta en diferentes canales: Convencional, Planes de Ahorro y Venta Corporativa. Nuestra trayectoria revela más de 60.000 vehículos entregados y un equipo de trabajo que supera los 400 colaboradores, especialmente capacitados para ofrecer el <b style={{color: '#E40428'}}>mejor servicio al cliente.</b></p>
           <p data-aos="fade-down" data-aos-duration="1400" id="info-text2">Contamos con un complejo de concesionarias diseñadas para lograr la mejor experiencia de compra. 6 sucursales de ventas, más de 8.000 metros cuadrados de talleres integrales para brindarle el mejor servicio postventa y tres Centros de Entrega de 0km propios.</p>
 
           <h2 id="title-info" data-aos="fade-down" data-aos-duration="1400">ELEGÍ TARABORELLI</h2>
@@ -126,6 +136,66 @@ export default function Main() {
               <FaCar id="info-icon3" className="main-info-article-container-finance-icon" />
               <h6 id="info-text5" className="main-info-article-container-finance-text">Tomamos tu usado en parte de pago y te ofrecemos la mejor financiación del mercado.</h6>
             </div>
+          </div>
+        </article>
+      </section>
+
+      <section className='main-planes'>
+        <article className="main-planes-banda"> </article>
+
+        <article className='main-planes-title' data-aos="fade-down" data-aos-duration="1400">
+          <h3 className='main-planes-title-text'>MODELOS DESTACADOS</h3>
+        </article>
+  
+        <article className='main-planes-container' data-aos="fade-down" data-aos-duration="1400">
+          <div className='main-planes-container-plan' onClick={() => handleScrollToForm('Cronos')}>
+            <span className='main-planes-container-plan-title'><p className='main-planes-container-plan-title-text'>Cronos</p></span>
+            <img className='main-planes-container-plan-img' src='../../../public/images/cronos.png' />
+            <span className='main-planes-container-plan-button'>
+              <p>CONSULTAR</p>
+              <FaArrowCircleRight className='main-planes-container-plan-button-icon'/>
+            </span>
+          </div>
+
+          <div className='main-planes-container-plan' onClick={() => handleScrollToForm('Argo')}>
+            <span className='main-planes-container-plan-title'><p className='main-planes-container-plan-title-text'>Argo</p></span>
+            <img className='main-planes-container-plan-img' src='../../../public/images/argo.png' />
+            <span className='main-planes-container-plan-button'>
+              <p>Consultar</p>
+              <FaArrowCircleRight className='main-planes-container-plan-button-icon'/>
+            </span>
+          </div>
+          <div className='main-planes-container-plan' onClick={() => handleScrollToForm('Mobi')}>
+            <span className='main-planes-container-plan-title'><p className='main-planes-container-plan-title-text'>Mobi</p></span>
+            <img className='main-planes-container-plan-img' src='../../../public/images/mobi.png' />
+            <span className='main-planes-container-plan-button'>
+              <p>CONSULTAR</p>
+              <FaArrowCircleRight className='main-planes-container-plan-button-icon'/>
+            </span>
+          </div>
+          <div className='main-planes-container-plan' onClick={() => handleScrollToForm('Toro')}>
+            <span className='main-planes-container-plan-title'><p className='main-planes-container-plan-title-text'>Toro</p></span>
+            <img className='main-planes-container-plan-img' src='../../../public/images/toro.png' />
+            <span className='main-planes-container-plan-button'>
+              <p>CONSULTAR</p>
+              <FaArrowCircleRight className='main-planes-container-plan-button-icon'/>
+            </span>
+          </div>
+          <div className='main-planes-container-plan' onClick={() => handleScrollToForm('Fiorino')}>
+            <span className='main-planes-container-plan-title'><p className='main-planes-container-plan-title-text'>Fiorino</p></span>
+            <img className='main-planes-container-plan-img' src='../../../public/images/fiorino.png' />
+            <span className='main-planes-container-plan-button'>
+              <p>CONSULTAR</p>
+              <FaArrowCircleRight className='main-planes-container-plan-button-icon'/>
+            </span>
+          </div>
+          <div className='main-planes-container-plan' onClick={() => handleScrollToForm('Strada')}>
+            <span className='main-planes-container-plan-title'><p className='main-planes-container-plan-title-text'>Strada</p></span>
+            <img className='main-planes-container-plan-img' src='../../../public/images/strada.png' />
+            <span className='main-planes-container-plan-button'>
+              <p>CONSULTAR</p>
+              <FaArrowCircleRight className='main-planes-container-plan-button-icon'/>
+            </span>
           </div>
         </article>
       </section>
