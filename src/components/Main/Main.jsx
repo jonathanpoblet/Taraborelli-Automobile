@@ -36,30 +36,16 @@ export default function Main() {
     if(!modelo) return Swal.fire({title: 'Ingresa el modelo que buscas', confirmButtonText: 'OK',confirmButtonColor: '#111', customClass: { popup: 'custom-background', title: 'custom-title' }})
     if(!sucursal) return Swal.fire({title: 'Ingresa una sucursal de interes', confirmButtonText: 'OK',confirmButtonColor: '#111', customClass: { popup: 'custom-background', title: 'custom-title' }})
 
-    const form = {nombre,email,tel,modelo,sucursal}
 
-    console.log(form)
+    Swal.fire({title: 'Enviando Formulario', confirmButtonText: 'OK',confirmButtonColor: '#111', customClass: { popup: 'custom-background', title: 'custom-title' }});
+    
+    setTimeout(() => {
+      Swal.fire({title: 'Formulario enviado', confirmButtonText: 'OK',confirmButtonColor: '#111', customClass: { popup: 'custom-background', title: 'custom-title' }});
+    }, 1500);
 
-    const response = await fetch('http://localhost:80/send-email', {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      redirect: "follow",
-      body: JSON.stringify(form),
-    });
-
-    console.log(response)
-
-    if(response.status == 200) {
-      Swal.fire({title: 'Enviando Formulario', confirmButtonText: 'OK',confirmButtonColor: '#111', customClass: { popup: 'custom-background', title: 'custom-title' }})
-      
-      setTimeout(() => {
-        location.reload()
-      }, 1500);
-    } else {
-      Swal.fire({title: 'Error al enviar formulario', confirmButtonText: 'OK',confirmButtonColor: '#111', customClass: { popup: 'custom-background', title: 'custom-title' }})
-    }
+    setTimeout(() => {
+      location.reload()
+    }, 3500);
   }
 
   return (
