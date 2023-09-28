@@ -62,7 +62,7 @@ export default function Main() {
             <input id="email" className="main-section-2-article-form-input" type="text" placeholder="Correo Electrónico" />
             <input id="tel" className="main-section-2-article-form-input" type="text" placeholder="Teléfono" />
 
-            <img src="../../../public/images/loading.gif" style={{ display: "none" }} className="main-section-2-article-form-loader" id="loader" />
+            <img src="./images/loading.gif" style={{ display: "none" }} className="main-section-2-article-form-loader" id="loader" />
 
             <input id="modelo" className="main-section-2-article-form-input" type="text" placeholder="¿Qué modelo estás buscando?" />
             <select id="sucursal" className="main-section-2-article-form-select">
@@ -121,7 +121,7 @@ export default function Main() {
         <article className='main-planes-container' data-aos="fade-down" data-aos-duration="1400">
           <div className='main-planes-container-plan' onClick={() => handleScrollToForm('Cronos')}>
             <span className='main-planes-container-plan-title'><p className='main-planes-container-plan-title-text'>Cronos</p></span>
-            <img className='main-planes-container-plan-img' src='../../../public/images/cronos.png' />
+            <img className='main-planes-container-plan-img' src='./images/cronos.png' />
             <span className='main-planes-container-plan-button'>
               <p>CONSULTAR</p>
               <FaArrowCircleRight className='main-planes-container-plan-button-icon'/>
@@ -130,7 +130,7 @@ export default function Main() {
 
           <div className='main-planes-container-plan' onClick={() => handleScrollToForm('Argo')}>
             <span className='main-planes-container-plan-title'><p className='main-planes-container-plan-title-text'>Argo</p></span>
-            <img className='main-planes-container-plan-img' src='../../../public/images/argo.png' />
+            <img className='main-planes-container-plan-img' src='./images/argo.png' />
             <span className='main-planes-container-plan-button'>
               <p>Consultar</p>
               <FaArrowCircleRight className='main-planes-container-plan-button-icon'/>
@@ -138,7 +138,7 @@ export default function Main() {
           </div>
           <div className='main-planes-container-plan' onClick={() => handleScrollToForm('Mobi')}>
             <span className='main-planes-container-plan-title'><p className='main-planes-container-plan-title-text'>Mobi</p></span>
-            <img className='main-planes-container-plan-img' src='../../../public/images/mobi.png' />
+            <img className='main-planes-container-plan-img' src='./images/mobi.png' />
             <span className='main-planes-container-plan-button'>
               <p>CONSULTAR</p>
               <FaArrowCircleRight className='main-planes-container-plan-button-icon'/>
@@ -146,7 +146,7 @@ export default function Main() {
           </div>
           <div className='main-planes-container-plan' onClick={() => handleScrollToForm('Toro')}>
             <span className='main-planes-container-plan-title'><p className='main-planes-container-plan-title-text'>Toro</p></span>
-            <img className='main-planes-container-plan-img' src='../../../public/images/toro.png' />
+            <img className='main-planes-container-plan-img' src='./images/toro.png' />
             <span className='main-planes-container-plan-button'>
               <p>CONSULTAR</p>
               <FaArrowCircleRight className='main-planes-container-plan-button-icon'/>
@@ -154,7 +154,7 @@ export default function Main() {
           </div>
           <div className='main-planes-container-plan' onClick={() => handleScrollToForm('Fiorino')}>
             <span className='main-planes-container-plan-title'><p className='main-planes-container-plan-title-text'>Fiorino</p></span>
-            <img className='main-planes-container-plan-img' src='../../../public/images/fiorino.png' />
+            <img className='main-planes-container-plan-img' src='./images/fiorino.png' />
             <span className='main-planes-container-plan-button'>
               <p>CONSULTAR</p>
               <FaArrowCircleRight className='main-planes-container-plan-button-icon'/>
@@ -162,7 +162,7 @@ export default function Main() {
           </div>
           <div className='main-planes-container-plan' onClick={() => handleScrollToForm('Strada')}>
             <span className='main-planes-container-plan-title'><p className='main-planes-container-plan-title-text'>Strada</p></span>
-            <img className='main-planes-container-plan-img' src='../../../public/images/strada.png' />
+            <img className='main-planes-container-plan-img' src='./images/strada.png' />
             <span className='main-planes-container-plan-button'>
               <p>CONSULTAR</p>
               <FaArrowCircleRight className='main-planes-container-plan-button-icon'/>
