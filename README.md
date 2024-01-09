@@ -1,6 +1,7 @@
 # Taraborelli Automobile
 
-## DEPLOY: https://jonathanpoblet.github.io/Taraborelli-Automobile/
+Deploy: https://jonathanpoblet.github.io/Taraborelli-Automobile/
+
 ![Taraborelli Automobile](https://github.com/jonathanpoblet/Taraborelli-Automobile/assets/106752020/a46575bc-f116-4963-b0e9-0103fe2f8007)
 
 ---
